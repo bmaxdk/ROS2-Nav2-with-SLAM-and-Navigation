@@ -70,3 +70,17 @@ The goal for navigation is to make a robot move from one place to another while 
 * [grid based fast SLAM](https://github.com/bmaxdk/grid-based-fastSLAM)
 * [graph SLAM](https://github.com/bmaxdk/graphSLAM)
 * [SLAM RTAB Map](https://github.com/bmaxdk/RoboticsND-RTAB-Map-My-World)
+
+# Turtlebot3 Environment Launch
+```bash
+$ source /opt/ros/foxy/setup.bash
+
+# set turtlebot3 robot
+$ export TURTLEBOT3_MODEL=waffle   
+```
+You can simply save this setup at `bashrc` 
+```bash
+$ vim ~/.bashrc
+$ source .bashrc
+$ printenv | grep TURTLE
+```

@@ -55,5 +55,18 @@ $ git clone -b foxy-devel https://github.com/ROBOTIS-GIT/turtlebot3_simulations.
 ```bash
 $ sudo apt install python3-colcon-common-extensions
 $ sudo apt install terminator
-
 ```
+
+# Generate a Map with SLAM
+The goal for navigation is to make a robot move from one place to another while avoiding collision. 
+
+**Navigation: a 2 step process**:
+* **Step1:** Create a map (with SLAM) - Fist create a map of the world(the space where the robot can move).
+* **Step2:** Make the robot navigate from point A to point B
+
+**SLAM**: Allows the robot to localize itself in the environment relative to all of the worlds, the objects, obstacles and at the same time, it will also map this environemnt.
+
+**Cehck Sections Below:**
+* [grid based fast SLAM](https://github.com/bmaxdk/grid-based-fastSLAM)
+* [graph SLAM](https://github.com/bmaxdk/graphSLAM)
+* [SLAM RTAB Map](https://github.com/bmaxdk/RoboticsND-RTAB-Map-My-World)

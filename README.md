@@ -21,3 +21,39 @@ These attributes make Nav2 an essential tool for building advanced robotic syste
 # Setup and Installation
 **Version**
 - ROS2 Foxy/Ubuntu 20.04
+
+**Install the Nav2 package:**
+```bash
+$ source /opt/ros/foxy/setup.bash
+$ sudo apt update
+$ sudo apt install ros-foxy-navigation2 ros-foxy-nav2-bringup
+```
+
+**Install the ROS2 Turtlebot3**
+```bash
+$ source /opt/ros/foxy/setup.bash
+
+**[Option1]**
+```bash
+$ sudo apt install ros-foxy-turtlebot3*
+```
+**[Option2]**
+
+# Create a new ROS2 workspace:
+```bash
+$ mkdir -p ~/turtlebot3_ws/src
+$ cd ~/turtlebot3_ws
+```
+#Clone the TurtleBot3 packages:
+```bash
+$ cd ~/turtlebot3_ws/src/
+$ git clone -b foxy-devel https://github.com/ROBOTIS-GIT/turtlebot3.git
+$ git clone -b foxy-devel https://github.com/ROBOTIS-GIT/turtlebot3_msgs.git
+$ git clone -b foxy-devel https://github.com/ROBOTIS-GIT/turtlebot3_simulations.git
+```
+# Install Dependencies:
+```bash
+$ sudo apt install python3-colcon-common-extensions
+$ sudo apt install terminator
+
+```

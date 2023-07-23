@@ -84,3 +84,10 @@ $ vim ~/.bashrc
 $ source .bashrc
 $ printenv | grep TURTLE
 ```
+**Control turtlebot3**
+```bash
+$ ros2 launch turtlebot3_gazebo turtlebot3_world.launch.py
+
+# launch telop key
+$ ros2 run turtlebot3_teleop teleop_keyboard
+```

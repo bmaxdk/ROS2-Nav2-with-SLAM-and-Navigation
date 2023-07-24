@@ -110,5 +110,25 @@ $ mkdir map
 
 # Save map
 $ ros2 run nav2_map_server map_saver_cli -f maps/my_map
-
 ```
+
+```yaml
+image: maps/my_map.pgm # path of the image
+mode: trinary
+resolution: 0.05 # meters per pixel in .pgm image
+origin: [-1.26, -2.41, 0] # origin of the map
+negate: 0
+occupied_thresh: 0.65 # probabily that one pixel is occupied or not 65% or above than it is occpuied [0 255]
+free_thresh: 0.25 # less than 25% then we consider the pixel[0 255] as not occupied
+```
+
+**To get acctual dimension of the map:**
+
+`$ vi my_map.pgm`
+```pgm
+P5 #
+125 118
+255
+```
+* 125 * 0.05 resolution
+* 118 * 0.05 resolution 

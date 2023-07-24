@@ -150,7 +150,7 @@ $ sudo apt update
 $ sudo apt install ros-foxy-rmw-cyclonedds-cpp # For ROS2 Foxy
 
 # Tell ROS2 to use these DDS
-export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
+$ export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
 
 # you may want to add in ~/.bashrc
 

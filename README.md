@@ -132,3 +132,26 @@ P5
 ```
 * 125 * 0.05 resolution
 * 118 * 0.05 resolution 
+
+
+# Make a Robot Navigate
+Use navigation stack to generate
+
+### For ROS2: Fix Nav2
+**Need to Correct DDS. This will allow us to make the navigation to stack work correctly**
+First: We are going to change the DDS from **fast DDS** to **cyclone DDS** to make it quick.
+
+ROS2 communication is based on DDS.
+
+To install cyclone DDS:
+```bash
+$ sudo apt update
+# $ sudo apt install ros-humble-rmw-cyclonedds-cpp # For ROS2 Humble
+$ sudo apt install ros-foxy-rmw-cyclonedds-cpp # For ROS2 Foxy
+
+# Tell ROS2 to use these DDS
+export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
+
+# you may want to add in ~/.bashrc
+
+```

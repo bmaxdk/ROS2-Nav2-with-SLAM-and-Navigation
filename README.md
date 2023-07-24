@@ -126,7 +126,7 @@ free_thresh: 0.25 # less than 25% then we consider the pixel[0 255] as not occup
 
 `$ vi my_map.pgm`
 ```pgm
-P5 #
+P5
 125 118
 255
 ```

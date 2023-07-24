@@ -88,6 +88,27 @@ $ printenv | grep TURTLE
 ```bash
 $ ros2 launch turtlebot3_gazebo turtlebot3_world.launch.py
 
-# launch telop key
+# Run telop key
 $ ros2 run turtlebot3_teleop teleop_keyboard
+```
+
+# Generate and Save a Map with SLAM in ROS2
+```bash
+$ ros2 launch turtlebot3_gazebo turtlebot3_world.launch.py
+
+# Launch SLAM feature for turtlebot3 and set simulation time
+$ ros2 launch turtlebot3_cartographer cartographer.launch.py use_sim_time:=True
+# This launch file contains SLAM feature
+
+# Run telop key
+$ ros2 run turtlebot3_teleop teleop_keyboard
+```
+### Move around to create map
+```bash
+# Save map into map folder
+$ mkdir map
+
+# Save map
+$ ros2 run nav2_map_server map_saver_cli -f maps/my_map
+
 ```

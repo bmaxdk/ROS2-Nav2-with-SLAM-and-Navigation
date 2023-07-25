@@ -153,4 +153,12 @@ $ sudo apt install ros-foxy-rmw-cyclonedds-cpp # For ROS2 Foxy
 $ export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
 # you may want to add in ~/.bashrc
 
+# You need to edit waffle.yaml
+$ cd /opt/ros/foxy/share/turtlebot3_navigation2/param
+$ sudo vi waffle.yaml
 ```
+modify line where `robot_model_type: "differential"` to `robot_model_type: "nav2_amcl::DifferentialMotionModel"`
+
+This is issue from TurtleBot3 robot. 
+
+

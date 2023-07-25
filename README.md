@@ -171,3 +171,26 @@ $ ros2 launch turtlebot3_navigation2 navigation2.launch.py use_sim_time:=True ma
 
 ```
 
+**If map doesn't appeared in RViz**
+Correct `yaml` file.
+```yaml
+image: map/my_map.pgm
+mode: trinary
+resolution: 0.05
+origin: [-1.26, -2.41, 0]
+negate: 0
+occupied_thresh: 0.65
+free_thresh: 0.25
+```
+
+change `yaml` file above to bottom
+
+```yaml
+image: my_map.pgm
+mode: trinary
+resolution: 0.05
+origin: [-1.26, -2.41, 0]
+negate: 0
+occupied_thresh: 0.65
+free_thresh: 0.25
+```

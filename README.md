@@ -225,3 +225,13 @@ In `RViz`, as shown above, you can click **Waypoint mode** then click `Navigatio
 <img src="image/a9.png">
 <img src="image/a10.png">
 <img src="image/a11.png">
+
+# Dynamic Obstacles Avoidance
+There is a feature that the navigation to stack is the way to avoid obstacles dynamically. Currently static objects such as wall is already included in the map which the navigation already knows about them.
+
+What will happen if suddenly you have a new object randomly in the map?
+
+If someone is walking in front of the robot, the navigation stack should be able to avoid this.
+
+In simulation `Gazbo`, go to `Insert` and you can add objetcs in the world.
+

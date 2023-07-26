@@ -253,3 +253,18 @@ The navigation recalculate to avoid the obstacles.
 <img src="image/a24.png">
 <img src="image/a25.png">
 <img src="image/a26.png">
+
+# Global Planner, Local Planner and Costmaps
+<img src="image/a27.png">
+
+In the picture, the pink line will be the **global plan** and the blue line is the **local plan**.
+
+In the `Rviz Displays Pannel`, **local planner** called here is `Controller`. When you sending `Nav2 Goal` The **global planner** will compute the path that you see in pink. The **global planner** will use the entire map to compute the path, so it will try to reach the destination as fast as possible with the best possible path. And to compute this, it will use **cost map** under `Global planner`. **Cost map** is where each pixel has a cost. So if a pixele obstacle or a wall is going to have the highest possible cost, then we have some sor of margin with blue so that we make sure that this is kind of also an obstacle.
+
+<img src="image/a28.png">
+
+As you see this blue boundary avoid robot to bump into the obstacle. This blue rigion is safety margin. 
+
+Basically this cost map has been generated so that the red pixel, we have a higher cost than bluish pixel.
+
+Local planner, Contorller is for control the robot to follow the path and update of the update rate for this controller is going to be higher.

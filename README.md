@@ -235,3 +235,9 @@ If someone is walking in front of the robot, the navigation stack should be able
 
 In simulation `Gazbo`, go to `Insert` and you can add objetcs in the world.
 
+The navigation recalculate to avoid the obstacles.
+<img src="image/a13png">
+<img src="image/a14.png">
+<img src="image/a15.png">
+<img src="image/a16.png">
+<img src="image/a17.png">

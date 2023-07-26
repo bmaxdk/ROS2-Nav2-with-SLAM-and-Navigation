@@ -211,3 +211,17 @@ Now you can try with either `teleop key` or `Navigation2 Goal` to move.
 <img src="image/a5.png">
 
 The real robot is reaching the destination (Goal).
+
+
+# Waypoint Follower - Go Through Multiple Nav2 Goals
+You can set several waypoint in one time to navigate the goal.
+
+<img src="image/a6.png">
+
+In `RViz`, as shown above, you can click **Waypoint mode** then click `Navigation2 Goal` to set several waypoints and then click `Start Navigation` button.
+
+<img src="image/a7.png">
+<img src="image/a8.png">
+<img src="image/a9.png">
+<img src="image/a10.png">
+<img src="image/a11.png">

@@ -1,4 +1,5 @@
-# ROS2-Nav2-with-SLAM-and-Navigation
+<h1 align="center">ROS2-Nav2-with-SLAM-and-Navigation</h1>
+
 Ros2 Navigation 2 Stack
 
 # Why Nav2?
@@ -194,3 +195,5 @@ negate: 0
 occupied_thresh: 0.65
 free_thresh: 0.25
 ```
+
+<img src="image/1.png">

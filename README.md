@@ -202,4 +202,12 @@ From the image above, you want to give an estimation of where the robot is in th
 
 <img src="image/a2.png">
 
-Now this image above is assigned where the robot is at this moment in this map.
+Now this image above is assigned where the robot is at this moment in this map. The small rectangle is going to try to match the environment. So when the robot move, the robot can localize itself in the map. If you put a wrong robot pose estimate with wrong orientation, **laser scan data** from `Gazbo` the reality does not correspond to the `map`.
+
+Now you can try with either `teleop key` or `Navigation2 Goal` to move.
+
+<img src="image/a3.png">
+<img src="image/a4.png">
+<img src="image/a5.png">
+
+The real robot is reaching the destination (Goal).

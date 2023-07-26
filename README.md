@@ -196,4 +196,10 @@ occupied_thresh: 0.65
 free_thresh: 0.25
 ```
 
-<img src="image/1.png">
+<img src="image/a1.png">
+
+From the image above, you want to give an estimation of where the robot is in the map. Click `2D Pose Estimate` in `RViz` the tell where the robot is. 
+
+<img src="image/a2.png">
+
+Now this image above is assigned where the robot is at this moment in this map.

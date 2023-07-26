@@ -267,4 +267,6 @@ As you see this blue boundary avoid robot to bump into the obstacle. This blue r
 
 Basically this cost map has been generated so that the red pixel, we have a higher cost than bluish pixel.
 
-Local planner, Contorller is for control the robot to follow the path and update of the update rate for this controller is going to be higher.
+**Local planner**, Contorller is for control the robot to follow the path and update of the update rate for this controller is going to be higher.
+
+**Local planner** is where robot is actually follows.

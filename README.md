@@ -236,10 +236,21 @@ If someone is walking in front of the robot, the navigation stack should be able
 In simulation `Gazbo`, go to `Insert` and you can add objetcs in the world.
 
 The navigation recalculate to avoid the obstacles.
-<img src="image/a13png">
+
+<img src="image/a12.png">
+<img src="image/a13.png">
 <img src="image/a14.png">
 <img src="image/a15.png">
 <img src="image/a16.png">
 <img src="image/a17.png">
 
 # Navigation Activity - Navigation with TurtleBot3_house
+<img src="image/a18png">
+<img src="image/a19.png">
+<img src="image/a20.png">
+<img src="image/a21.png">
+<img src="image/a22.png">
+<img src="image/a23.png">
+<img src="image/a24.png">
+<img src="image/a25.png">
+<img src="image/a26.png">

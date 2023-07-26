@@ -250,7 +250,6 @@ The navigation recalculate to avoid the obstacles.
 <img src="image/a20.png">
 <img src="image/a21.png">
 <img src="image/a22.png">
-<img src="image/a23.png">
 <img src="image/a24.png">
 <img src="image/a25.png">
 <img src="image/a26.png">

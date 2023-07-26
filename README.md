@@ -218,7 +218,7 @@ You can set several waypoint in one time to navigate the goal.
 
 <img src="image/a6.png">
 
-In `RViz`, as shown above, you can click **Waypoint mode** then click `Navigation2 Goal` to set several waypoints and then click `Start Navigation` button.
+In `RViz`, as shown above, you can click **Waypoint mode** then click `Navigation2 Goal` to set several waypoints and then click `Start Navigation` button or you can click `Start Nav Through Poses` (for without stopping).
 
 <img src="image/a7.png">
 <img src="image/a8.png">

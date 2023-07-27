@@ -342,5 +342,7 @@ This will listen to the TF for 5 seconds and after 5 seconds, it's going to expo
 
 Usually the **base_link** is the first frame of your robot, but this frame may not be on the ground.
 
+In here the **base_link** to **base_scan**, which is where the Lidar is, where laser scan is. The **transformation** between **base_link** and the **base_scan** is usually fixed because LIDAR doesn't move relative to the main structure of the robot.
+
 # The Nav2 Architecture - Explained Step by Step
 

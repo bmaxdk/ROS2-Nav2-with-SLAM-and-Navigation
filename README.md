@@ -319,6 +319,17 @@ If the goal is valid and if the path is free of obstacles, then the **global pla
 
 As shown error above, `planner server` which is **global planner** is showing `Abording handle` and `bt_navigato` shows that the `Goal failed`. So what's happening is that the **global planner** in `planner server` node is going to try to compute a path and it's going to try to send this path to the **local planner** but there is an issue. If the **global planner** can't successsfully generate a path or if the **local planner** can't successfully follow the path, then the `recovery server` will be called and will start a `recovery behavior`. So **Recovery behavior** can be just go back a bit or turn around a bit which will try to find path and `behavior server` will be called to try to clear the map.
 # TFs and Important Frames
+Transforms called `tf`. Let's see the relationship between TFs and navigation.
+
+<img src="image/a34.png">
+
+* We need to **keep track of each frame** relative to other frames. 
+* Using ROS2 tf2 package.
+* Keeps track of each 3D coordinate frame over time.
+* Structured tree containing all the frames.
+* It can easily subscribe to the TF topic.
+* To get TFs for robot, subscribe to the /tf topic, or visualize them in RViz
+
 
 # The Nav2 Architecture - Explained Step by Step
 

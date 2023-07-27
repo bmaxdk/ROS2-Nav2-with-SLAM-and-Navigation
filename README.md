@@ -352,5 +352,11 @@ Let's see the difference between TFs and the navigation stack. Let's talk about 
 The **map** frame and the relationship between **map** and footprint will be used to compute the exact location of the robot with SLAM using the laser scan from the LiDAR or it could be a GPS.
 
 **Odom** is short for odometry. It's basically an estimation of the robot position using the robot's internal measurements. For example, the recorded speed of the wheels. The location is going to be quite smooth in the short term, but it's going to drift over time.
+
+So the navigation stack does is it will take the best of both and combine **map** and **odom** so we can have a precise location of the robot over time, but as well as location that is linear is smooth which means it's not going to jump around all the time.
+
+Now the only thing is that due to the design of TF in ROS, one grame can only have one parent, one frame can have one parent and many childeren, but only one parent.
+
+So the `base_footprint` or the `base_link` cannot have two parents. So that's why it has been decided that the map frame will become the parent of the odom frame. And the odom frame, the parent of the base_link are based_footprint. Simply the map frame will be used to keep a precise location in the long term and the odom will be used to keep a smooth location in the short term.
 # The Nav2 Architecture - Explained Step by Step
 

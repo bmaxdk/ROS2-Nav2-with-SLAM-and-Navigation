@@ -303,8 +303,21 @@ Now let's set this 0.55 to 0.25, blue region in RViz, it shrink. So the robot wi
 
 
 # Recovery Behavior
+In the real world, and even in the simulation with Gazebo, you've seen that sometimes the robot just doesn't manage to reach the destination.
 
+Maybe the destination point is not valid or there is a new obstacle in the way that cannot be avoided or the path is too narrow or simply the algorithm just fails to properly follow the path. In those cases, the navigation stack will start what is called a **recovery behavior**.
 
+**Recovery behavior** is simply a behavior that's predefined for the robot, and that will try to fix the current issue so that the robot can continue to move and reach the destination goal.
+
+<img src="image/a30.png">
+
+If the goal is valid and if the path is free of obstacles, then the **global planner** will compute the path the local planner will try to follow and success. What if Nav2 Goal is pointed outside of the wall? Since robot doesn't manage to reach, the robot is going backward and then the robot is keep turning.
+
+<img src="image/a31.png">
+<img src="image/a32.png">
+<img src="image/a33.png">
+
+As shown error above, `planner server` which is **global planner** is showing `Abording handle` and `bt_navigato` shows that the `Goal failed`. So what's happening is that the **global planner** in `planner server` node is going to try to compute a path and it's going to try to send this path to the **local planner** but there is an issue. If the **global planner** can't successsfully generate a path or if the **local planner** can't successfully follow the path, then the `recovery server` will be called and will start a `recovery behavior`. So **Recovery behavior** can be just go back a bit or turn around a bit which will try to find path and `behavior server` will be called to try to clear the map.
 # TFs and Important Frames
 
 # The Nav2 Architecture - Explained Step by Step

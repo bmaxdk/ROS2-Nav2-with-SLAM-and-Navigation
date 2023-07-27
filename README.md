@@ -271,7 +271,8 @@ Basically this cost map has been generated so that the red pixel, we have a high
 
 **Local planner** is where robot is actually follows.
 
-# Parameters
+* When you give a navigation goal, the **global planner** will compute a path using the **global cost map**. It will then transfer this path to the **local planner or the controller**, which will be responsible for actually making the robot move and try to follow the global path in a **local environment**.
+# Modify Navigation Parameters
 There are lots of parameters for the stack. One of the useful parameter will allow you to tune the cost maps. To find the parameter.
 
 ```bash

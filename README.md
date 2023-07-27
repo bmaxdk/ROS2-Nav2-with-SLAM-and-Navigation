@@ -349,6 +349,8 @@ Let's see the difference between TFs and the navigation stack. Let's talk about 
 * map
 * odom
 
-The **map** frame and the relationship between **map** and footprint will be used to compute the exact location of the robot with SLAM using the laser scan from the LiDAR.
+The **map** frame and the relationship between **map** and footprint will be used to compute the exact location of the robot with SLAM using the laser scan from the LiDAR or it could be a GPS.
+
+**Odom** is short for odometry. It's basically an estimation of the robot position using the robot's internal measurements. For example, the recorded speed of the wheels. The location is going to be quite smooth in the short term, but it's going to drift over time.
 # The Nav2 Architecture - Explained Step by Step
 

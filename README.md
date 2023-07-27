@@ -298,8 +298,8 @@ Let's pay attention `publish_frequency`. It is currently set to 1Hz which update
 
 Let's also check `inflation_layer.inflation_radius` which set to 0.55
 
-Now let's set this 0.55 to 0.25, blue region in RViz, it shrink. So the robot will be able to go closer to the obstacles.
+Now let's set this 0.55 to 0.25, blue region in RViz, it shrink. So the robot will be able to go closer to the obstacles. Normally depends on the robot boundary radius, use the robot's radius.
 
 
-
+# Recovery Behavior
 

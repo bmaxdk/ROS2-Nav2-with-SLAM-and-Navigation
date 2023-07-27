@@ -330,6 +330,10 @@ Transforms called `tf`. Let's see the relationship between TFs and navigation.
 * It can easily subscribe to the TF topic.
 * To get TFs for robot, subscribe to the /tf topic, or visualize them in RViz
 
+```bash
+ros2 run tf2_tools view_frames
+```
+This will listen to the TF for 5 seconds and after 5 seconds, it's going to export a PDF. In the PDF you can see there is the tree of all of the transformers in the robot and with the world.
 
 # The Nav2 Architecture - Explained Step by Step
 

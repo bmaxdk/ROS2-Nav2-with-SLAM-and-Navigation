@@ -270,3 +270,28 @@ Basically this cost map has been generated so that the red pixel, we have a high
 **Local planner**, Contorller is for control the robot to follow the path and update of the update rate for this controller is going to be higher.
 
 **Local planner** is where robot is actually follows.
+
+# Parameters
+There are lots of parameters for the stack. One of the useful parameter will allow you to tune the cost maps. To find the parameter.
+
+```bash
+# Terminal1
+$ ros2 launch turtlebot3_gazebo turtlebot3_world.launch.py 
+
+# Ternimal2
+$ ros2 launch turtlebot3_navigation2 navigation2.launch.py use_sim_time:=True map:=maps/my_map.yaml 
+
+# In RViz, Setup 2D Pose Estimate
+
+# Terminal3
+$ rqt
+```
+In rqt, `Plugins` << `Configuration` << `Dynamic Reconfigure`.
+
+Let's se **global_costmap** and select **global_costmap** as shown below.
+
+<img src="image/a29.png">
+
+Now you can see all of the parameters and this shows the live parameters for the global cost map. There's lots of parameters are indicated.
+
+Let's pay attention `publish_frequency`. It is currently set to 1Hz which update frequency is one hertz. So the cost map is going to be updated at on hertz.

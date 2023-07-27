@@ -295,3 +295,11 @@ Let's se **global_costmap** and select **global_costmap** as shown below.
 Now you can see all of the parameters and this shows the live parameters for the global cost map. There's lots of parameters are indicated.
 
 Let's pay attention `publish_frequency`. It is currently set to 1Hz which update frequency is one hertz. So the cost map is going to be updated at on hertz.
+
+Let's also check `inflation_layer.inflation_radius` which set to 0.55
+
+Now let's set this 0.55 to 0.25, blue region in RViz, it shrink. So the robot will be able to go closer to the obstacles.
+
+
+
+

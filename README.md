@@ -368,3 +368,5 @@ Now you see all the inputs for the stack. What is happening when you send a navi
 
 
 <img src="image/nav2_architecture.png">
+
+**BT Navigator Server** where BT means **behavior tree** is indicated more details in [here](https://navigation.ros.org/behavior_trees/overview/nav2_specific_nodes.html).

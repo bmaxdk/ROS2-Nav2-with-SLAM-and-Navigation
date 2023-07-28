@@ -360,3 +360,6 @@ Now the only thing is that due to the design of TF in ROS, one grame can only ha
 So the `base_footprint` or the `base_link` cannot have two parents. So that's why it has been decided that the map frame will become the parent of the odom frame. And the odom frame, the parent of the base_link are based_footprint. Simply the map frame will be used to keep a precise location in the long term and the odom will be used to keep a smooth location in the short term.
 # The Nav2 Architecture - Explained Step by Step
 
+<img src="image/nav2_architecture.png">
+
+The most outer box here is navigation2. In order to function, the navigation stack requires some inputs you have first the transforms are `TF`. Before we made the robot navigate, we first used SLAM to generate a `map` and then we give the map to the navigation stack and on top of TF and the map navigation also requires to receive `sensor data` such as a laser scan from a LIDAR.

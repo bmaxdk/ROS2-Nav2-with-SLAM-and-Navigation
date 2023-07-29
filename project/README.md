@@ -29,3 +29,8 @@ To open my world:
 ```bash
 $ gazebo my_world.world
 ```
+
+Now we have a complete custom world based on a floor plan. This will simulated world will be used to testing.
+
+# Make TurtleBot3 Navigate In the world
+Now make turtlebot3 to navigate in this world. The goal would be to add up the robot so that it can move in the world.

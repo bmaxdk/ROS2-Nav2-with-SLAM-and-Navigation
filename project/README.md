@@ -18,3 +18,14 @@ In `Insert` pannel, you can import directly add your world into Gazebo.
 If you have a floor plan image (in png), you can import from `Edit << Building Editor` then begin building. And then Scaled it well.
 
 Now, the image with corrected scaled is shown. Use wall to create. For more precise use `shift` key.
+
+# Build world file
+```bash
+$ gazebo
+```
+`Insert` pannel << insert the your model. Once it is doen, `File` << `Save World As` and then save as  `.world`.
+
+To open my world:
+```bash
+$ gazebo my_world.world
+```

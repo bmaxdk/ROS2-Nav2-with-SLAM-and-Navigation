@@ -47,3 +47,14 @@ $ cd worlds
 Will indicates where examples of world files are located.
 
 ## Make turtlebot3 workspace
+Build ROS2 workspace
+```bash
+$ mkdir -p turtlebot3_ws/src 
+$ cd turtlebot3_ws/src
+$ git clone https://github.com/ROBOTIS-GIT/turtlebot3_simulations.git
+
+# check out correct version. For example for foxy
+$ git checkout foxy-devel
+$ git pull
+$ 
+```

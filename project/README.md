@@ -58,3 +58,11 @@ $ git checkout foxy-devel
 $ git pull
 $ 
 ```
+
+
+
+[Troubleshooting]
+If gazebo is not launching, try:
+```bash
+$ source /usr/share/gazebo/setup.sh
+```

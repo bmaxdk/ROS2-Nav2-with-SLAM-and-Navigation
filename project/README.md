@@ -33,4 +33,13 @@ $ gazebo my_world.world
 Now we have a complete custom world based on a floor plan. This will simulated world will be used to testing.
 
 # Make TurtleBot3 Navigate In the world
-Now make turtlebot3 to navigate in this world. The goal would be to add up the robot so that it can move in the world.
+Now make turtlebot3 to navigate in this world. The goal would be to add up the robot so that it can move in the world. Also generate a map and navigate in the map.
+
+Here, pay attention this `ros2 launch turtlebot3_gazebo turtlebot3_world.launch.py`. We will modify world file
+```bash
+$ cd /opt/ros/foxy/share
+```
+Here have all of the packages.
+```bash
+$ cd turtlebot3_gazebo 
+```

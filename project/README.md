@@ -118,7 +118,40 @@ $ ros2 launch turtlebot3_gazebo turtlebot3_my_world_using_model.launch.py
 ```
 # Make Turtlebot3 Navigate World
 Now the robot is fully integrated into the custom world that have created.
+* Generate Map using SLAM
+* Navigate robot using the map
 
+```bash
+# In workspace
+
+# Terminal1
+$ source install/setup.bash
+$ ros2 launch turtlebot3_gazebo turtlebot3_my_world.launch.py
+
+# Terminal2
+$ source install/setup.bash
+$ ros2 launch turtlebot3_cartographer cartographer.launch.py use_sim_time:=True
+
+# Terminal3
+$ source install/setup.bash
+$ ros2 run turtlebot3_teleop teleop_keyboard
+
+#Once map is ready
+# Terminal4
+$ ros2 run nav2_map_server map_saver_cli -f maps/custom_map
+```
+
+```bash
+# In workspace
+
+# Terminal1
+$ source install/setup.bash
+$ ros2 launch turtlebot3_gazebo turtlebot3_my_world.launch.py
+
+# Terminal2
+$ source install/setup.bash
+$ ros2 launch turtlebot3_navigation2 navigation2.launch.py use_sim_time:=True map:=maps/custom_map.yaml
+```
 # [Troubleshooting]
 If gazebo is not launching, try:
 ```bash

@@ -140,7 +140,7 @@ $ ros2 run turtlebot3_teleop teleop_keyboard
 # Terminal4
 $ ros2 run nav2_map_server map_saver_cli -f maps/custom_map
 ```
-
+**Now begin to Navigate the robot with the custom map**
 ```bash
 # In workspace
 

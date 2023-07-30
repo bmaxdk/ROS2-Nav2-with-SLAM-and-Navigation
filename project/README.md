@@ -51,14 +51,64 @@ Build ROS2 workspace
 ```bash
 $ mkdir -p turtlebot3_ws/src 
 $ cd turtlebot3_ws/src
-$ git clone https://github.com/ROBOTIS-GIT/turtlebot3_simulations.git
+$ git clone https://github.com/ROBOTIS-GIT/turtlebot3_simulations.git .
 
 # check out correct version. For example for foxy
 $ git checkout foxy-devel
 $ git pull
-$ 
+$ cd ..
+$ colcon build --symlink-install
 ```
 
+
+Updates my_world.world to add robot model
+```world
+
+    <physics type="ode">
+      <real_time_update_rate>1000.0</real_time_update_rate>
+      <max_step_size>0.001</max_step_size>
+      <real_time_factor>1</real_time_factor>
+      <ode>
+        <solver>
+          <type>quick</type>
+          <iters>150</iters>
+          <precon_iters>0</precon_iters>
+          <sor>1.400000</sor>
+          <use_dynamic_moi_rescaling>1</use_dynamic_moi_rescaling>
+        </solver>
+        <constraints>
+          <cfm>0.00001</cfm>
+          <erp>0.2</erp>
+          <contact_max_correcting_vel>2000.000000</contact_max_correcting_vel>
+          <contact_surface_layer>0.01000</contact_surface_layer>
+        </constraints>
+      </ode>
+    </physics>
+    
+    <include>
+      <pose>-2.0 -0.5 0.01 0.0 0.0 0.0</pose>
+      <uri>model://turtlebot3_waffle</uri>
+    </include>
+```
+To assign robot `burger`, `waffle`, `waffle_pi`, you need to rename this part.
+```
+    <include>
+      <pose>-2.0 -0.5 0.01 0.0 0.0 0.0</pose>
+      <uri>model://turtlebot3_waffle</uri>
+    </include>
+```
+
+Using .world
+```bash
+$ source install/setup.bash
+$ ros2 launch turtlebot3_gazebo turtlebot3_my_world.launch.py
+```
+
+Using .model
+```bash
+$ source install/setup.bash
+$ ros2 launch turtlebot3_gazebo turtlebot3_my_world_using_model.launch.py
+```
 
 
 [Troubleshooting]

@@ -66,7 +66,7 @@ $ colcon build --symlink-install
 Modification on [turtlebot3_my_world](https://github.com/bmaxdk/ROS2-Nav2-with-SLAM-and-Navigation/tree/main/project/src/turtlebot3_gazebo/models/turtlebot3_my_world), [my_world file(turtlebot3_my_world and my_world.world)](https://github.com/bmaxdk/ROS2-Nav2-with-SLAM-and-Navigation/tree/main/project/src/turtlebot3_gazebo/worlds) and [my launch file (turtlebot3_my_world.launch.py and turtlebot3_my_world_using_model.launch.py)](https://github.com/bmaxdk/ROS2-Nav2-with-SLAM-and-Navigation/tree/main/project/src/turtlebot3_gazebo/launch) 
 
 
-Updates my_world.world to add robot model
+Updates `my_world.world` to add robot model. Remove other physics appeared in .world file:
 ```world
 
     <physics type="ode">
@@ -123,3 +123,5 @@ If gazebo is not launching, try:
 ```bash
 $ source /usr/share/gazebo/setup.sh
 ```
+
+In .world if you have duplicated name appeared, it may cause open the gazebo. Make sure change duplicated name.

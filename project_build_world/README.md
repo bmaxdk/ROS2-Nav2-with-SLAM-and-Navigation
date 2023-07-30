@@ -140,15 +140,32 @@ $ ros2 run turtlebot3_teleop teleop_keyboard
 # Terminal4
 $ ros2 run nav2_map_server map_saver_cli -f maps/custom_map
 ```
+Modify `maps/custom_map.pgm` to `custom_map.pgm`
+```yaml
+image: custom_map.pgm
+mode: trinary
+resolution: 0.05
+origin: [-2.66, -3.56, 0]
+negate: 0
+occupied_thresh: 0.65
+free_thresh: 0.25
+```
+
 **Now begin to Navigate the robot with the custom map**
+
+<img src="image/a2.png">
+
+
 ```bash
 # In workspace
 
 # Terminal1
+$ export TURTLEBOT3_MODEL=waffle
 $ source install/setup.bash
 $ ros2 launch turtlebot3_gazebo turtlebot3_my_world.launch.py
 
 # Terminal2
+$ export TURTLEBOT3_MODEL=waffle
 $ source install/setup.bash
 $ ros2 launch turtlebot3_navigation2 navigation2.launch.py use_sim_time:=True map:=maps/custom_map.yaml
 ```

@@ -61,7 +61,7 @@ $ colcon build --symlink-install
 ```
 
 
-Modification to add [my_world file](https://github.com/bmaxdk/ROS2-Nav2-with-SLAM-and-Navigation/tree/main/project/src/turtlebot3_gazebo/worlds) and [my launch file](https://github.com/bmaxdk/ROS2-Nav2-with-SLAM-and-Navigation/tree/main/project/src/turtlebot3_gazebo/launch) 
+Modification on [my_world file](https://github.com/bmaxdk/ROS2-Nav2-with-SLAM-and-Navigation/tree/main/project/src/turtlebot3_gazebo/worlds) and [my launch file](https://github.com/bmaxdk/ROS2-Nav2-with-SLAM-and-Navigation/tree/main/project/src/turtlebot3_gazebo/launch) 
 
 
 Updates my_world.world to add robot model

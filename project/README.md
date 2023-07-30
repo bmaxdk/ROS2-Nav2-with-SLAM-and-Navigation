@@ -116,7 +116,8 @@ $ ros2 launch turtlebot3_gazebo turtlebot3_my_world.launch.py
 $ source install/setup.bash
 $ ros2 launch turtlebot3_gazebo turtlebot3_my_world_using_model.launch.py
 ```
-
+# Make Turtlebot3 Navigate World
+Now the robot is fully integrated into the custom world that have created.
 
 # [Troubleshooting]
 If gazebo is not launching, try:

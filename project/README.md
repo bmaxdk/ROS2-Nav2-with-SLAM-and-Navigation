@@ -47,6 +47,8 @@ $ cd worlds
 Will indicates where examples of world files are located.
 
 ## Make turtlebot3 workspace
+<img src="image/a1.png">
+
 Build ROS2 workspace
 ```bash
 $ mkdir -p turtlebot3_ws/src 
@@ -60,8 +62,8 @@ $ cd ..
 $ colcon build --symlink-install
 ```
 
-
-Modification on [my_world file](https://github.com/bmaxdk/ROS2-Nav2-with-SLAM-and-Navigation/tree/main/project/src/turtlebot3_gazebo/worlds) and [my launch file](https://github.com/bmaxdk/ROS2-Nav2-with-SLAM-and-Navigation/tree/main/project/src/turtlebot3_gazebo/launch) 
+### Two ways you can launch you world
+Modification on [turtlebot3_my_world](https://github.com/bmaxdk/ROS2-Nav2-with-SLAM-and-Navigation/tree/main/project/src/turtlebot3_gazebo/models/turtlebot3_my_world), [my_world file(turtlebot3_my_world and my_world.world)](https://github.com/bmaxdk/ROS2-Nav2-with-SLAM-and-Navigation/tree/main/project/src/turtlebot3_gazebo/worlds) and [my launch file (turtlebot3_my_world.launch.py and turtlebot3_my_world_using_model.launch.py)](https://github.com/bmaxdk/ROS2-Nav2-with-SLAM-and-Navigation/tree/main/project/src/turtlebot3_gazebo/launch) 
 
 
 Updates my_world.world to add robot model
@@ -101,13 +103,15 @@ To assign robot `burger`, `waffle`, `waffle_pi`, you need to rename this part.
     </include>
 ```
 
-Using .world
+**To open your world with turtlebot3**
+
+1. Using `.world`:
 ```bash
 $ source install/setup.bash
 $ ros2 launch turtlebot3_gazebo turtlebot3_my_world.launch.py
 ```
 
-Using .model
+2. Using `.model`:
 ```bash
 $ source install/setup.bash
 $ ros2 launch turtlebot3_gazebo turtlebot3_my_world_using_model.launch.py

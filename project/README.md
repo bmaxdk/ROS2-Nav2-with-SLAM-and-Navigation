@@ -114,7 +114,7 @@ $ ros2 launch turtlebot3_gazebo turtlebot3_my_world_using_model.launch.py
 ```
 
 
-[Troubleshooting]
+# [Troubleshooting]
 If gazebo is not launching, try:
 ```bash
 $ source /usr/share/gazebo/setup.sh

@@ -370,3 +370,22 @@ Now you see all the inputs for the stack. What is happening when you send a navi
 <img src="image/nav2_architecture.png">
 
 **BT Navigator Server** where BT means **behavior tree** is indicated more details in [here](https://navigation.ros.org/behavior_trees/overview/nav2_specific_nodes.html).
+
+# Useful Tips
+<img src="image/aa1.png">
+Sometimes, wall may not be complete or there is some free space that is still in gray color or map has been twisted a bit when you do SLAM.
+
+One thing you can do is continue to SLAM again and start the map from scratch until you got better image. The map is nothing else than an image containing a pixels ranging from black to white. So if you have an issue on your map or if you want to make it more accurate, you can edit image directly.
+
+You can use `gimp` to modify the map.
+```bash
+$ sudo snap install gimp
+$ gimp
+
+# Now you can open or drag the file from gimp 
+```
+Use `Pencil Tool` to modify. `File`<<`Export As...` to save it
+
+<img src="image/aa2.png">
+
+This technique with `gimp` is very useful if your map is not complete.

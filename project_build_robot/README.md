@@ -1,2 +1,2 @@
-<h1 align="center">Adapting a Custom Robot for Nav2</h1>
+<h1 align="center">Adapting a Custom Robot for Nav2 Project</h1>
 

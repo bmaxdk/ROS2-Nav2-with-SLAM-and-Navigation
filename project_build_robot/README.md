@@ -38,7 +38,13 @@ Any robot that you create, you will create a `URDF (United Robot Description For
 
 Once we have written the URDF, we can start an existing node that you will find in almost all robots. This node is the `robot_state_publisher`. As input, it will receive the URDF and the `joint_states` data published by the controller to say, for example, what is the position of the velocity of the wheels. As an output, the `robot_state_publisher` will then compute and publish the transforms for your robot, and this `TF` is going to be used by the navigation stack.
 
+```bash
+$ sudo apt install ros-foxy-urdf-tutorial
 
+# source ros2
+$ source /opt/ros/foxy/setup.bash
+$ ros2 launch urdf_tutorial display.launch.py model:=my_robot.urdf
+```
 
 
 

@@ -32,11 +32,15 @@ TFs needed for Nav2:
 
 Any robot that you create, you will create a `URDF (United Robot Description Format)` file to describe all the elements and frame of your robot. URDF is `XML` format. In URDF, you robot will be described the different frames of the robot, including, base_link and base_scan of the frame. 
 
-**To create TFs, we just need to create a URDF**.
+**To create TFs, we just need to create a URDF**
+
+<img src="image/a4.png">
+
+Once we have written the URDF, we can start an existing node that you will find in almost all robots. This node is the `robot_state_publisher`. As input, it will receive the URDF and the `joint_states` data published by the controller to say, for example, what is the position of the velocity of the wheels. As an output, the `robot_state_publisher` will then compute and publish the transforms for your robot, and this `TF` is going to be used by the navigation stack.
 
 
 
 
 
 # Additional Useful Sources 
-[TF](https://husarion.com/tutorials/ros-tutorials/6-transformation-in-ROS/)
+[TF2](https://husarion.com/tutorials/ros-tutorials/6-transformation-in-ROS/)

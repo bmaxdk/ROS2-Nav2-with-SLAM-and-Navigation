@@ -12,15 +12,27 @@ The default solution to find this is to compute a `3D translation` plus `3D rota
 
 <img src="image/a2.png">
 
+We need at least three transfoms so the robot can work with `TF2`.
+
 TFs needed for Nav2:
 1. `map` -> `odom`
+
+    The first one is the `map` to `odom`. This is going to be published by the localization features.
+
 2. `odom` -> `base_link`
+    The second, `odom` to `base_link` 
 3. `base_link` -> `base_scan`
 
+    Third, `base_link` to `base_scan`
+
+    <img src="image/a3.png">
+
+    As you can see, the `base_link` frame will be the frame that is attached to the main structure of the chassis of the robot. This `base_link` frame is usually the first frame that you design for any robot that you create in ROS2. Now the `base_scan` frame is where the LiDAR is situated, so basically where the laser scan is coming from and the transform that we're interested in is the transform between those two frames. Basically, we want to know where the laser scan is relative to the origin of the main structure of the robot. Without this, robot won't know where the obstacles detected with the light. In some cases you might see the frames placed just like this here on the image above. So that the `base_link` frame is at the lowest point of the structure. Some may shows `base_link` located in center of the main frame which is ok. The only important thing is to make sure that the frame for the `base_scan` is placed correctly exactly where the LiDAR is. In `rqt`, you will be able to see that the `tf tree` indicates that is connected `base_link` to `base_scan`. Having this `base_link` to `base_scan` in the tree, the navigation can also compute the transformation between the `map` frame and the `base_scan` to effectively use the data from the LiDAR and the place of the obstacles correctly on the `map`.
 
 
+Any robot that you create, you will create a `URDF (United Robot Description Format)` file to describe all the elements and frame of your robot. URDF is `XML` format. In URDF, you robot will be described the different frames of the robot, including, base_link and base_scan of the frame. 
 
-
+**To create TFs, we just need to create a URDF**.
 
 
 

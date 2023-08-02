@@ -43,7 +43,7 @@ $ sudo apt install ros-foxy-urdf-tutorial
 
 # source ros2
 $ source /opt/ros/foxy/setup.bash
-$ ros2 launch urdf_tutorial display.launch.py model:=my_robot.urdf
+$ ros2 launch urdf_tutorial display.launch.py model:=$(pwd)/my_robot.urdf
 ```
 
 

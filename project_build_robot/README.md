@@ -48,7 +48,7 @@ $ ros2 launch urdf_tutorial display.launch.py model:=my_robot.urdf
 
 
 
-# Additional Useful Sources 
+# Useful Sources 
 [TF2](https://husarion.com/tutorials/ros-tutorials/6-transformation-in-ROS/)
 <!-- /etc/apt/sources.list.d/ros2.list -->
 <!-- deb [arch=amd64 signed-by=/usr/share/keyrings/ros-archive-keyring.gpg] http://packages.ros.org/ros2/ubuntu focal main -->

@@ -120,6 +120,9 @@ Let's talk about **output of the navigation stack**. Simply a velocity command t
 * Option2
     - ros2_control
         - diff_drive_controller
+
+# Run Navigation With Custom Robot (Using `slam_toolbox`)
+
 # Useful Sources 
 [TF2](https://husarion.com/tutorials/ros-tutorials/6-transformation-in-ROS/)
 <!-- /etc/apt/sources.list.d/ros2.list -->

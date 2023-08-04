@@ -46,6 +46,21 @@ $ source /opt/ros/foxy/setup.bash
 $ ros2 launch urdf_tutorial display.launch.py model:=$(pwd)/my_robot.urdf
 ```
 
+<img src="image/a10.png">
+
+As shown `my_robot.urdf`, you can see the different frames.
+
+Picture below you can see `base_link` in main structure and `base_scan` that points to `base_link`.
+
+<img src="image/a5.png">
+<img src="image/a6.png">
+
+Here below, also shown `base_footprint`, which is the projection of the `base_link` of the floor. So it's going to be on the smae plan, on the same 2D plan as the `odom` and `map`.
+<img src="image/a7.png">
+<img src="image/a8.png">
+
+The most important parts are the relationship between the `base_link` and `base_scan`.
+<img src="image/a9.png">
 
 
 # Useful Sources 

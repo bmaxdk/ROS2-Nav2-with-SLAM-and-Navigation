@@ -21,6 +21,8 @@ TFs needed for Nav2:
 
 2. `odom` -> `base_link`
     The second, `odom` to `base_link` 
+    (Will talk about it after step 3)
+
 3. `base_link` -> `base_scan`
 
     Third, `base_link` to `base_scan`
@@ -65,6 +67,29 @@ The most important parts are the relationship between the `base_link` and `base_
 [my_robot.urdf](https://github.com/bmaxdk/ROS2-Nav2-with-SLAM-and-Navigation/blob/main/project_build_robot/my_robot.urdf) indicates how each link joint each other. Inside the `urdf` file, we have **link** and **link** is going to be one frame. For example, `base_footprint` and `base_link`. **Joint** is the relationship between those two frames. So we have in there, we have a `frame base_link` use `joint` which have `parent` and `child`. The child in `base_joint` is `base_link` and the paren in there is `base_link`.
 
 `link` <-> `joint` <-> `link`
+
+**To see URDF of the TurtleBot3:**
+```bash
+$ cd /opt/ros/foxy/share/turtlebot3_description/urdf
+$ vi turtlebot3_waffle.urdf
+```
+
+Now you have seen that you need to create URDF for your robot so that you can publish a `base_link` ot `base_scan` for the navigation stack.
+
+As I mentions in step 2, `odom -> base_link` TF is important. The odometry is used to localize a robot from its starting point, using its own motion. There will be drifiting of a distance all time depending on the data and so on. Therefore, even if the `odometry drifts`, it will be compensated with the map frame by the navigation stack. Therefore, in the end, will have both a precise location. 
+
+`map` -> `odom` -> `base_link` 
+
+A will encoder will tell you at what velocity will be tuning. By doing a simple integration calcualtion, you can also compute the position over the distance.
+
+Here is two options:
+* Option1: 
+    - Read velocity from encoders and compute position (You can get the velocity and compute the position yourself).
+    - Publish `nav_msgs/Odometry` msg (on the `/odom` topic) 
+    - Publish the `odom` -> `base_link` TF (on the `/tf` topic)
+* Option2:
+    - ros2_control (diff_drive_controller): You could use a frameworks such as ROS2 controller and in the framework, use the diff_drive_controller, which already does that for you.
+
 # Useful Sources 
 [TF2](https://husarion.com/tutorials/ros-tutorials/6-transformation-in-ROS/)
 <!-- /etc/apt/sources.list.d/ros2.list -->

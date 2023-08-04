@@ -80,15 +80,28 @@ As I mentions in step 2, `odom -> base_link` TF is important. The odometry is us
 
 `map` -> `odom` -> `base_link` 
 
-A will encoder will tell you at what velocity will be tuning. By doing a simple integration calcualtion, you can also compute the position over the distance.
+### Odometry with Wheel Encoder
+A **wheel encoder** will tell you at what velocity wheel will be turning. By doing a simple integration calcualtion, you can also compute the position over the distance.
 
 Here is two options:
 * Option1: 
     - Read velocity from encoders and compute position (You can get the velocity and compute the position yourself).
     - Publish `nav_msgs/Odometry` msg (on the `/odom` topic) 
     - Publish the `odom` -> `base_link` TF (on the `/tf` topic)
-* Option2:
-    - ros2_control (diff_drive_controller): You could use a frameworks such as ROS2 controller and in the framework, use the diff_drive_controller, which already does that for you.
+* Option2 (recommend):
+    - ros2_control (**diff_drive_controller**): You could use a frameworks such as ROS2 controller and in the framework, use the `diff_drive_controller`, which already does that for you.
+    - ros2_control and ros2_controllers provide the foundation for robot control in ROS2
+    - If you're working with ros2_control for a differential drive robot with wheel encoders in the context of the ROS 2 Navigation Stack (nav2), you'd typically be using the diff_drive_controller to interface with your robot's actuators and the joint_state_controller to report the state of the robot (e.g., wheel positions and velocities). The reported state would be used, among other things, to update the robot's pose in the world based on encoder readings.
+    - URDF Configuration: Ensure that your robot's URDF (or xacro) description includes the necessary transmission elements for ros2_control
+
+In your robot, you could have several sensors, which means several possible sources for computing a better and more precise `odometry`.
+
+<img src="image/img.png">
+
+One of the most common sensors that you might have on your robot is an IMU or inertial measurement unit. You would then publish the odometry on the topic either directly with ROS2 controller, and then you will publish the IMU data on the IMU topic. Then you run the localization node, which is going to subscribe to those topics and also merge and filter data. The robot localization will publish the new `odom` on the automated filtered topic and it will also publish the `odom` to `base_link` transform for you.
+
+### Setup Sensors
+ Wheel encoders and LIDAR is good enough. More sensors might improve the navigation precision, but those two just are enough to start.
 
 # Useful Sources 
 [TF2](https://husarion.com/tutorials/ros-tutorials/6-transformation-in-ROS/)

@@ -101,8 +101,25 @@ In your robot, you could have several sensors, which means several possible sour
 One of the most common sensors that you might have on your robot is an IMU or inertial measurement unit. You would then publish the odometry on the topic either directly with ROS2 controller, and then you will publish the IMU data on the IMU topic. Then you run the localization node, which is going to subscribe to those topics and also merge and filter data. The robot localization will publish the new `odom` on the automated filtered topic and it will also publish the `odom` to `base_link` transform for you.
 
 ### Setup Sensors
- Wheel encoders and LIDAR is good enough. More sensors might improve the navigation precision, but those two just are enough to start.
+Wheel encoders and LIDAR is good enough. More sensors might improve the navigation precision, but those two just are enough to start.
 
+In Sensor **Camera**, as shown in turtlebot3, you can read and publish the images on the camera topic using the sensor message image
+- Create a `camera_link` in the URDF
+- Topic: /camera/image_raw (example)
+- Message: sensor_msgs/msg/Image
+
+Same principle applies to other sensors such as IMU, GPS, etc. So far, I've talked about **input of the navigation stack**.
+
+### Hardware Controller
+- Get /cmd_vel and actuate motors
+Let's talk about **output of the navigation stack**. Simply a velocity command taht you need to translate into something that the motors of your robot. As you can see, the topic will be something like `cmd_vel` and the message will be twisted from the geometry message by cage. Inside the `Twist message`, you have a linear velocity as well as an angular velocity.
+
+* Option1
+    - Your custom hardware controller
+
+* Option2
+    - ros2_control
+        - diff_drive_controller
 # Useful Sources 
 [TF2](https://husarion.com/tutorials/ros-tutorials/6-transformation-in-ROS/)
 <!-- /etc/apt/sources.list.d/ros2.list -->

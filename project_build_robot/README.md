@@ -64,6 +64,7 @@ The most important parts are the relationship between the `base_link` and `base_
 
 [my_robot.urdf](https://github.com/bmaxdk/ROS2-Nav2-with-SLAM-and-Navigation/blob/main/project_build_robot/my_robot.urdf) indicates how each link joint each other. Inside the `urdf` file, we have **link** and **link** is going to be one frame. For example, `base_footprint` and `base_link`. **Joint** is the relationship between those two frames. So we have in there, we have a `frame base_link` use `joint` which have `parent` and `child`. The child in `base_joint` is `base_link` and the paren in there is `base_link`.
 
+`link` <-> `joint` <-> `link`
 # Useful Sources 
 [TF2](https://husarion.com/tutorials/ros-tutorials/6-transformation-in-ROS/)
 <!-- /etc/apt/sources.list.d/ros2.list -->

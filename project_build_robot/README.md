@@ -148,6 +148,10 @@ $ rviz2
 $ ros2 run rviz2 rviz2
 ```
 
+In **rviz2** need to configure. Add:
+* `TF`
+* `MAP` -> Topic: `/map`
+* `LaserScan` -> Topic `/scan`
 
 
 

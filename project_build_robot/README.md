@@ -114,10 +114,10 @@ Same principle applies to other sensors such as `IMU`, `GPS`, etc. So far, I've 
 - Get `/cmd_vel` and `actuate motors`
 Let's talk about **output of the navigation stack**. Simply a velocity command taht you need to translate into something that the motors of your robot. As you can see, the topic will be something like `cmd_vel` and the message will be twisted from the geometry message by cage. Inside the `Twist message`, you have a linear velocity as well as an angular velocity.
 
-* Option1
+* [Option1]
     - Your custom hardware controller
 
-* Option2
+* [Option2]
     - ros2_control
         - `diff_drive_controller`
 
@@ -149,7 +149,7 @@ $ rviz2
 $ ros2 run rviz2 rviz2
 ```
 
-In **rviz2** need to configure. Add:
+**In **rviz2** need to configure. Add:**
 * `TF`
 * `MAP` -> Topic: `/map`
 * `LaserScan` -> Topic `/scan`
@@ -180,14 +180,14 @@ $ rviz2
 ```
 <img src="image/aa2.png">
 
-In empty `rivz` add:
+**In empty `rivz` add:**
 * `LaserScan`
 * `TF`
 * `Map` -> Topic: `/map` and Durability Policy: `Transient Local`
 * `RobotModel` -> Description Topic: `/robot_description`
 * **2D Pose Estimate** to correct robot position.
 
-Addition
+**Addition:**
 * `GlobalCostMap(Map)` -> Topic: `/global_costmap/costmap` and Color Scheme: `costmap`
 * `LocalCostMap(Map)` -> Topic: `/local_costmap/costmap` and Color Scheme: `costmap`
 

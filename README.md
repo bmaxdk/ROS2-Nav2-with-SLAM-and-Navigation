@@ -371,7 +371,7 @@ Now you see all the inputs for the stack. What is happening when you send a navi
 
 **BT Navigator Server** where BT means **behavior tree** is indicated more details in [here](https://navigation.ros.org/behavior_trees/overview/nav2_specific_nodes.html).
 
-# Useful Tips
+# Useful Tips: Modificate Map
 <img src="image/aa1.png">
 Sometimes, wall may not be complete or there is some free space that is still in gray color or map has been twisted a bit when you do SLAM.
 

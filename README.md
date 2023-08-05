@@ -34,11 +34,9 @@ $ sudo apt install ros-foxy-navigation2 ros-foxy-nav2-bringup
 ```bash
 $ source /opt/ros/foxy/setup.bash
 
-**[Option1]**
-```bash
 $ sudo apt install ros-foxy-turtlebot3*
 ```
-**[Option2]**
+
 
 # Create a new ROS2 workspace:
 ```bash
@@ -112,7 +110,7 @@ $ mkdir map
 # Save map
 $ ros2 run nav2_map_server map_saver_cli -f maps/my_map
 ```
-
+**In `my_map.yaml`:**
 ```yaml
 image: maps/my_map.pgm # path of the image
 mode: trinary
@@ -124,8 +122,10 @@ free_thresh: 0.25 # less than 25% then we consider the pixel[0 255] as not occup
 ```
 
 **To get acctual dimension of the map:**
-
+```bash
 `$ vi my_map.pgm`
+```
+**In `my_map.pgm`:**
 ```pgm
 P5
 125 118
@@ -324,7 +324,7 @@ Transforms called `tf`. Let's see the relationship between TFs and navigation.
 <img src="image/a34.png">
 
 * We need to **keep track of each frame** relative to other frames. 
-* Using ROS2 tf2 package.
+* Using ROS2 `tf2` package.
 * Keeps track of each 3D coordinate frame over time.
 * Structured tree containing all the frames.
 * It can easily subscribe to the TF topic.

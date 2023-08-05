@@ -30,7 +30,7 @@ $ sudo apt update
 $ sudo apt install ros-foxy-navigation2 ros-foxy-nav2-bringup
 ```
 
-**Install the ROS2 Turtlebot3**
+**[Option1 Install TurtleBot3] Install the ROS2 Turtlebot3**
 ```bash
 $ source /opt/ros/foxy/setup.bash
 
@@ -43,7 +43,7 @@ $ sudo apt install ros-foxy-turtlebot3*
 $ mkdir -p ~/turtlebot3_ws/src
 $ cd ~/turtlebot3_ws
 ```
-#Clone the TurtleBot3 packages:
+**[Option2 Install TurtleBot3]** Clone the TurtleBot3 packages:
 ```bash
 $ cd ~/turtlebot3_ws/src/
 $ git clone -b foxy-devel https://github.com/ROBOTIS-GIT/turtlebot3.git

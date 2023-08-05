@@ -122,6 +122,7 @@ Let's talk about **output of the navigation stack**. Simply a velocity command t
         - diff_drive_controller
 
 # Run Navigation With Custom Robot (Using `slam_toolbox`)
+From previous step, successfully seen how to configure robot for the naviagation stack. Once robot is correctly configured, now it's time to start SLAM and navigation.
 
 ```bash
 $ 

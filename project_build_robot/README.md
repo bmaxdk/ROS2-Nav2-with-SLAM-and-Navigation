@@ -127,6 +127,7 @@ Let's talk about **output of the navigation stack**. Simply a velocity command t
 $ 
 $
 $
+$ 
 ```
 
 

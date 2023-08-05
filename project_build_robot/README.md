@@ -156,6 +156,14 @@ In **rviz2** need to configure. Add:
 
 <img src="image/aa1.png">
 
+Now open teleop keyboard
+```bash
+$ ros2 run turtlebot3_teleop teleop_keyboard
+
+# once map is fully shown
+$ ros2 run nav2_map_server map_saver_cli -f maps/my_world_map2
+```
+For `rviz2` setting, you can save current configuration `File` << `Save Config As`.
 
 # Useful Sources 
 [TF2](https://husarion.com/tutorials/ros-tutorials/6-transformation-in-ROS/)

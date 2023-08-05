@@ -91,7 +91,7 @@ Here is two options:
 * Option2 (recommend):
     - ros2_control (**diff_drive_controller**): You could use a frameworks such as ROS2 controller and in the framework, use the `diff_drive_controller`, which already does that for you.
     - ros2_control and ros2_controllers provide the foundation for robot control in ROS2
-    - If you're working with ros2_control for a differential drive robot with wheel encoders in the context of the ROS 2 Navigation Stack (nav2), you'd typically be using the diff_drive_controller to interface with your robot's actuators and the joint_state_controller to report the state of the robot (e.g., wheel positions and velocities). The reported state would be used, among other things, to update the robot's pose in the world based on encoder readings.
+    - If you're working with ros2_control for a differential drive robot with wheel encoders in the context of the `ROS 2 Navigation Stack (nav2)`, you'd typically be using the diff_drive_controller to interface with your robot's actuators and the `joint_state_controller` to report the state of the robot (e.g., wheel positions and velocities). The reported state would be used, among other things, to update the robot's pose in the world based on encoder readings.
     - URDF Configuration: Ensure that your robot's URDF (or xacro) description includes the necessary transmission elements for ros2_control
 
 In your robot, you could have several sensors, which means several possible sources for computing a better and more precise `odometry`.
@@ -105,13 +105,13 @@ Wheel encoders and LIDAR is good enough. More sensors might improve the navigati
 
 In Sensor **Camera**, as shown in turtlebot3, you can read and publish the images on the camera topic using the sensor message image
 - Create a `camera_link` in the URDF
-- Topic: /camera/image_raw (example)
-- Message: sensor_msgs/msg/Image
+- Topic: `/camera/image_raw` (example)
+- Message: `sensor_msgs/msg/Image`
 
-Same principle applies to other sensors such as IMU, GPS, etc. So far, I've talked about **input of the navigation stack**.
+Same principle applies to other sensors such as `IMU`, `GPS`, etc. So far, I've talked about **input of the navigation stack**.
 
 ### Hardware Controller
-- Get /cmd_vel and actuate motors
+- Get `/cmd_vel` and `actuate motors`
 Let's talk about **output of the navigation stack**. Simply a velocity command taht you need to translate into something that the motors of your robot. As you can see, the topic will be something like `cmd_vel` and the message will be twisted from the geometry message by cage. Inside the `Twist message`, you have a linear velocity as well as an angular velocity.
 
 * Option1

@@ -152,7 +152,9 @@ In **rviz2** need to configure. Add:
 * `TF`
 * `MAP` -> Topic: `/map`
 * `LaserScan` -> Topic `/scan`
+* `RobotModel` -> Description Topic `/robot_description`
 
+<img src="image/aa1.png">
 
 
 # Useful Sources 

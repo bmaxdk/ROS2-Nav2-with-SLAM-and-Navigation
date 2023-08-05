@@ -140,6 +140,12 @@ $ ros2 launch nav2_bringup navigation_launch.py use_sim_time:=True
 
 # In thrid terminal, start the SLAM functionality with the SLAM toolbox
 $ ros2 launch slam_toolbox online_async_launch.py use_sim_time:=True
+# This is starting the SLAM process to generate a map
+
+# Now new terminal start rviz
+$ rviz2
+# or 
+$ ros2 run rviz2 rviz2
 ```
 
 

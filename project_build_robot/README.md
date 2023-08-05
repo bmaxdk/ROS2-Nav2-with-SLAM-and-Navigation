@@ -130,6 +130,7 @@ From previous step, successfully seen how to configure robot for the naviagation
 $ sudo apt install ros-foxy-slam-toolbox
 
 # Let's try how it works
+$ export TURTLEBOT3_MODEL=waffle
 $ ros2 launch turtlebot3_gazebo turtlebot3_world.launch.py 
 
 # check topic name /scan
@@ -165,6 +166,17 @@ $ ros2 run nav2_map_server map_saver_cli -f maps/my_world_map2
 ```
 For `rviz2` setting, you can save current configuration `File` << `Save Config As`.
 
+Now let robot navigate using map.
+```bash
+$ export TURTLEBOT3_MODEL=waffle
+$ ros2 launch turtlebot3_gazebo turtlebot3_world.launch.py 
+
+# New Terminal
+$ ros2 launch nav2_bringup bringup_launch.py use_sim_time:=True map:=maps/my_world_map2.yaml
+
+# New Terminal
+$ rviz2
+```
 # Useful Sources 
 [TF2](https://husarion.com/tutorials/ros-tutorials/6-transformation-in-ROS/)
 <!-- /etc/apt/sources.list.d/ros2.list -->

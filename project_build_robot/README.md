@@ -139,7 +139,7 @@ $ ros2 topic list
 $ ros2 launch nav2_bringup navigation_launch.py use_sim_time:=True
 
 # In thrid terminal, start the SLAM functionality with the SLAM toolbox
-$
+$ ros2 launch slam_toolbox online_async_launch.py use_sim_time:=True
 ```
 
 

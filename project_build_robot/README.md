@@ -171,12 +171,29 @@ Now let robot navigate using map.
 $ export TURTLEBOT3_MODEL=waffle
 $ ros2 launch turtlebot3_gazebo turtlebot3_world.launch.py 
 
-# New Terminal
-$ ros2 launch nav2_bringup bringup_launch.py use_sim_time:=True map:=maps/my_world_map2.yaml
+# New Terminal inside the map folder
+$ export TURTLEBOT3_MODEL=waffle
+$ ros2 launch nav2_bringup bringup_launch.py use_sim_time:=True map:=my_world_map2.yaml
 
 # New Terminal
 $ rviz2
 ```
+<img src="image/aa2.png">
+
+In empty `rivz` add:
+* `LaserScan`
+* `TF`
+* `Map` -> Topic: `/map` and Durability Policy: `Transient Local`
+* `RobotModel` -> Description Topic: `/robot_description`
+* **2D Pose Estimate** to correct robot position.
+
+Addition
+* `GlobalCostMap(Map)` -> Topic: `/global_costmap/costmap` and Color Scheme: `costmap`
+* `LocalCostMap(Map)` -> Topic: `/local_costmap/costmap` and Color Scheme: `costmap`
+
+
+Now with `2D Navigation Goal Pose` to navigate robot.
+
 # Useful Sources 
 [TF2](https://husarion.com/tutorials/ros-tutorials/6-transformation-in-ROS/)
 <!-- /etc/apt/sources.list.d/ros2.list -->

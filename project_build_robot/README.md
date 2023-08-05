@@ -125,10 +125,21 @@ Let's talk about **output of the navigation stack**. Simply a velocity command t
 From previous step, successfully seen how to configure robot for the naviagation stack. Once robot is correctly configured, now it's time to start SLAM and navigation.
 
 ```bash
-$ 
+# Slam to generate a map
+# First use a package `SLAM Toolbox` which will help to generate a map.
+$ sudo apt install ros-foxy-slam-toolbox
+
+# Let's try how it works
+$ ros2 launch turtlebot3_gazebo turtlebot3_world.launch.py 
+
+# check topic name /scan
+$ ros2 topic list
+
+# Another Terminal, Start navigation
+$ ros2 launch nav2_bringup navigation_launch.py use_sim_time:=True
+
+# In thrid terminal, start the SLAM functionality with the SLAM toolbox
 $
-$
-$ 
 ```
 
 

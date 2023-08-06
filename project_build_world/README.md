@@ -179,8 +179,7 @@ $ source /usr/share/gazebo/setup.sh
 In .world if you have duplicated name appeared, it may cause open the gazebo. Make sure change duplicated name.
 
 ## Troubleshooting `protocol buffer`
-
-First need to check **protocol buffer** version:
+Issue appeared when `protoc version` is not supported to current `turtlebot_gazebo` setup.First need to check **protocol buffer** version:
 
 ```bash
 $ protoc --version
@@ -222,9 +221,6 @@ Copyright (C) 2012 Open Source Robotics Foundation.
 Released under the Apache 2 License.
 http://gazebosim.org
 ```
-
-
-
 
 **Install Gazebo:**
 

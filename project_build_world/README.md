@@ -216,12 +216,12 @@ $protoc --version
 ```bash
 $ gazebo --version
 ```
-
+```text
 Gazebo multi-robot simulator, version 11.13.0
 Copyright (C) 2012 Open Source Robotics Foundation.
 Released under the Apache 2 License.
 http://gazebosim.org
-
+```
 
 
 

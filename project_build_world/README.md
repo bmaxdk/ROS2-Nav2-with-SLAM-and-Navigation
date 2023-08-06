@@ -177,3 +177,82 @@ $ source /usr/share/gazebo/setup.sh
 ```
 
 In .world if you have duplicated name appeared, it may cause open the gazebo. Make sure change duplicated name.
+
+## Troubleshooting `protocol buffer`
+
+First need to check **protocol buffer** version:
+
+```bash
+$ protoc --version
+```
+
+if `protoc` version is higher, try libprotoc 3.6.1:
+
+Download `protobuf-cpp-3.6.1.tar.gz` in [Protocol Buffers v3.6.1](https://github.com/protocolbuffers/protobuf/releases/tag/v3.6.1)
+
+```bash
+$ tar -xzf protobuf-cpp-3.6.1.tar.gz
+$ cd protobuf-3.6.1
+# Install Dependencies for prtobuf
+$ sudo apt-get install autoconf automake libtool curl make g++ unzip
+$ ./autogen.sh
+
+# Compile and install:
+$ ./configure
+$ make
+$ sudo make install
+# Update the Shared Libarary Cache:
+$ sudo ldconfig
+
+# Varify protoc version
+$protoc --version
+
+```
+
+### Gazebo Installation
+
+**Check current Gazebo Version:**
+
+```bash
+$ gazebo --version
+```
+
+Gazebo multi-robot simulator, version 11.13.0
+Copyright (C) 2012 Open Source Robotics Foundation.
+Released under the Apache 2 License.
+http://gazebosim.org
+
+
+
+
+
+**Install Gazebo:**
+
+[Install Gazebo from source on Ubuntu](https://classic.gazebosim.org/tutorials?tut=install_from_source&cat=install)
+
+```bash
+$ sudo apt-get install gazebo11 libgazebo11-dev
+
+# Locate the Gazebo Config Files.
+# Try:
+$ sudo find / -name gazebo-config.cmake
+$ colcon build --cmake-args -Dgazebo_DIR=/usr/lib/x86_64-linux-gnu/cmake/gazebo/gazebo-config.cmake
+
+# Source Gazebo Setup Script
+$ sudo find / -name setup.sh | grep gazebo
+$ source /path from above/setup.sh
+
+# If you see multiple Gazebo Script such as:
+#/usr/share/gazebo-11/setup.sh
+#/usr/share/gazebo/setup.sh
+# Try gazebo in /usr/share/
+
+# Install gazebo_ros_pkgs for ROS2 Foxy
+$ sudo apt-get install ros-foxy-gazebo-ros-pkgs
+$ source /opt/ros/foxy/setup.bash
+$ colcon build
+
+```
+
+
+

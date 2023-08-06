@@ -32,13 +32,13 @@ TFs needed for Nav2:
     As you can see, the `base_link` frame will be the frame that is attached to the main structure of the chassis of the robot. This `base_link` frame is usually the first frame that you design for any robot that you create in ROS2. Now the `base_scan` frame is where the LiDAR is situated, so basically where the laser scan is coming from and the transform that we're interested in is the transform between those two frames. Basically, we want to know where the laser scan is relative to the origin of the main structure of the robot. Without this, robot won't know where the obstacles detected with the light. In some cases you might see the frames placed just like this here on the image above. So that the `base_link` frame is at the lowest point of the structure. Some may shows `base_link` located in center of the main frame which is ok. The only important thing is to make sure that the frame for the `base_scan` is placed correctly exactly where the LiDAR is. In `rqt`, you will be able to see that the `tf tree` indicates that is connected `base_link` to `base_scan`. Having this `base_link` to `base_scan` in the tree, the navigation can also compute the transformation between the `map` frame and the `base_scan` to effectively use the data from the LiDAR and the place of the obstacles correctly on the `map`.
 
 
-Any robot that you create, you will create a `URDF (United Robot Description Format)` file to describe all the elements and frame of your robot. URDF is `XML` format. In URDF, you robot will be described the different frames of the robot, including, base_link and base_scan of the frame. 
+Any robot that you create, you will create a `URDF (United Robot Description Format)` file to describe all the elements and frame of your robot. `URDF` is `XML` format. In `URDF`, you robot will be described the different frames of the robot, including, `base_link` and `base_scan` of the frame. 
 
 **To create TFs, we just need to create a URDF**
 
 <img src="image/a4.png">
 
-Once we have written the URDF, we can start an existing node that you will find in almost all robots. This node is the `robot_state_publisher`. As input, it will receive the URDF and the `joint_states` data published by the controller to say, for example, what is the position of the velocity of the wheels. As an output, the `robot_state_publisher` will then compute and publish the transforms for your robot, and this `TF` is going to be used by the navigation stack.
+Once we have written the URDF, we can start an existing node that you will find in almost all robots. This node is the `robot_state_publisher`. As input, it will receive the `URDF` and the `joint_states` data published by the controller to say, for example, what is the position of the velocity of the wheels. As an output, the `robot_state_publisher` will then compute and publish the transforms for your robot, and this `TF` is going to be used by the navigation stack.
 
 ```bash
 $ sudo apt install ros-foxy-urdf-tutorial
@@ -64,7 +64,7 @@ Here below, also shown `base_footprint`, which is the projection of the `base_li
 The most important parts are the relationship between the `base_link` and `base_scan`.
 <img src="image/a9.png">
 
-[my_robot.urdf](https://github.com/bmaxdk/ROS2-Nav2-with-SLAM-and-Navigation/blob/main/project_build_robot/my_robot.urdf) indicates how each link joint each other. Inside the `urdf` file, we have **link** and **link** is going to be one frame. For example, `base_footprint` and `base_link`. **Joint** is the relationship between those two frames. So we have in there, we have a `frame base_link` use `joint` which have `parent` and `child`. The child in `base_joint` is `base_link` and the paren in there is `base_link`.
+[my_robot.urdf](https://github.com/bmaxdk/ROS2-Nav2-with-SLAM-and-Navigation/blob/main/project_build_robot/my_robot.urdf) indicates how each link joint each other. Inside the `urdf` file, we have **link** and each **link** is going to be one frame. For example, `base_footprint` and `base_link`. **Joint** is the relationship between those two frames. So we have in there, we have a `frame base_link` use `joint` which have `parent` and `child`. The child in `base_joint` is `base_link` and the paren in there is `base_link`.
 
 `link` <-> `joint` <-> `link`
 
@@ -74,7 +74,7 @@ $ cd /opt/ros/foxy/share/turtlebot3_description/urdf
 $ vi turtlebot3_waffle.urdf
 ```
 
-Now you have seen that you need to create URDF for your robot so that you can publish a `base_link` ot `base_scan` for the navigation stack.
+Now you have seen that you need to create `URDF` for your robot so that you can publish a `base_link` ot `base_scan` for the navigation stack.
 
 As I mentions in step 2, `odom -> base_link` TF is important. The odometry is used to localize a robot from its starting point, using its own motion. There will be drifiting of a distance all time depending on the data and so on. Therefore, even if the `odometry drifts`, it will be compensated with the map frame by the navigation stack. Therefore, in the end, will have both a precise location. 
 
@@ -124,6 +124,7 @@ Let's talk about **output of the navigation stack**. Simply a velocity command t
 # Run Navigation With Custom Robot (Using `slam_toolbox`)
 From previous step, successfully seen how to configure robot for the naviagation stack. Once robot is correctly configured, now it's time to start SLAM and navigation.
 
+### First let's try with `TurtleBot3` to test with SLAM ToolBox
 ```bash
 # Slam to generate a map
 # First use a package `SLAM Toolbox` which will help to generate a map.
@@ -192,7 +193,13 @@ $ rviz2
 * `LocalCostMap(Map)` -> Topic: `/local_costmap/costmap` and Color Scheme: `costmap`
 
 
-Now with `2D Navigation Goal Pose` to navigate robot.
+Now with `2D Navigation Goal Pose` to navigate the robot.
+
+### Using `Custom URDF Robot`
+Before begin with Custom URDF Robot to launch, check this **references:** 
+* `/opt/ros/foxy/share/turtlebot3_cartographer/launch/cartographer.launch.py`
+* `/opt/ros/foxy/share/turtlebot3_navigation2/launch/navigation2.launch.py`
+* `/opt/ros/foxy/share/turtlebot3_navigation2/param/waffle.yaml`
 
 # Useful Sources 
 [TF2](https://husarion.com/tutorials/ros-tutorials/6-transformation-in-ROS/)

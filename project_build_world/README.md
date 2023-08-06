@@ -204,7 +204,7 @@ $ sudo make install
 $ sudo ldconfig
 
 # Varify protoc version
-$protoc --version
+$ protoc --version
 
 ```
 
